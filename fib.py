@@ -1,4 +1,4 @@
-def fib3(n):
+ef fib(n):
     if n < 1:
         return None
     if n < 3:
@@ -9,5 +9,7 @@ def fib3(n):
     for i in range(3, n + 1):
         sum = elem1 + elem2
         elem1, elem2 = elem2, sum
-        print(i, sum)
     return sum
+
+
+print("Az 50. fibonacci szám:", fib(50))

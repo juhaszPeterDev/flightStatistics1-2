@@ -19,7 +19,7 @@ namespace repulo
             public string carrier_name;  // A légitársaság neve
             public string airport;//A reptér kódja
             public string airport_name;// A reptér neve
-            public string arr_flights; // Az érkező járatok száma
+            public double arr_flights; // Az érkező járatok száma
             public double arr_del15;// A késett járatok száma
             public double carrier_ct;
             public double weather_ct;
@@ -34,7 +34,6 @@ namespace repulo
             public double nas_delay;
             public double security_delay;
             public double late_aircraft_delay;
-            public double noname;
         }
         static int sor = 0;
         static List<repulo> repulok = new List<repulo>();
@@ -51,6 +50,10 @@ namespace repulo
             else
                 return Convert.ToDouble(vesszo(s));
         }
+        static string levag(string s)
+        {
+            return s.Substring(1, s.Length - 2);
+        }
 
         static void elso()
         {
@@ -64,26 +67,25 @@ namespace repulo
                 r = new repulo();
                 r.year = Convert.ToInt32(atmeneti[0]);
                 r.month = Convert.ToInt32(atmeneti[1]);
-                r.carrier = atmeneti[2];
-                r.carrier_name = atmeneti[3];
-                r.airport = atmeneti[4];
-                r.airport_name = atmeneti[5];
-                r.arr_flights = atmeneti[6];
-                r.arr_del15 = ertek(atmeneti[7]);
-                r.carrier_ct = ertek(atmeneti[8]);
-                r.weather_ct = ertek(atmeneti[9]);
-                r.nas_ct = ertek(atmeneti[10]);
-                r.security_ct = ertek(atmeneti[11]);
-                r.late_aircraft_ct = ertek(atmeneti[12]);
-                r.arr_cancelled = ertek(atmeneti[13]);
-                r.arr_diverted = ertek(atmeneti[14]);
-                r.arr_delay = ertek(atmeneti[15]);
-                r.carrier_delay = ertek(atmeneti[16]);
-                r.weather_delay = ertek(atmeneti[17]);
-                r.nas_delay = ertek(atmeneti[18]);
-                r.security_delay = ertek(atmeneti[19]);
-                r.late_aircraft_delay = ertek(atmeneti[20]);
-                r.noname = ertek(atmeneti[21]);
+                r.carrier = levag(atmeneti[2]);
+                r.carrier_name = levag(atmeneti[3]);
+                r.airport = levag(atmeneti[4]);
+                r.airport_name = levag(atmeneti[5] + ", " + atmeneti[6]);
+                r.arr_flights = ertek(atmeneti[7]);
+                r.arr_del15 = ertek(atmeneti[8]);
+                r.carrier_ct = ertek(atmeneti[9]);
+                r.weather_ct = ertek(atmeneti[10]);
+                r.nas_ct = ertek(atmeneti[11]);
+                r.security_ct = ertek(atmeneti[12]);
+                r.late_aircraft_ct = ertek(atmeneti[13]);
+                r.arr_cancelled = ertek(atmeneti[14]);
+                r.arr_diverted = ertek(atmeneti[15]);
+                r.arr_delay = ertek(atmeneti[16]);
+                r.carrier_delay = ertek(atmeneti[17]);
+                r.weather_delay = ertek(atmeneti[18]);
+                r.nas_delay = ertek(atmeneti[19]);
+                r.security_delay = ertek(atmeneti[20]);
+                r.late_aircraft_delay = ertek(atmeneti[21]);
                 repulok.Add(r);
                 sor++;
             }
@@ -91,22 +93,23 @@ namespace repulo
             //Ez csak teszt nagyjából:
             //for (int i = 0; i < sor; i++)
             //{
-            //    Console.WriteLine("{0} {1,-6} {2,-30} {3,-10:0.00 }", i + 1, repulok[i].year, repulok[i].airport_name, repulok[i].noname);
+            //    Console.WriteLine("{0} {1,-6} {2,-30} {3,-10:0.00 }", i + 1, repulok[i].year, repulok[i].airport_name, repulok[i].late_aircraft_delay);
             //}
         }
+        //A légitársaságok nevének listája
         static void legitarsasagokNeve()
         {
-            List<string> airport_name_list = new List<string>();
+            List<string> carrier_name_list = new List<string>();
             int j;
             bool van;
-            airport_name_list.Add(repulok[0].airport_name);
+            carrier_name_list.Add(repulok[0].carrier_name);
             for (int i = 1; i < sor; i++)
             {
                 j = 0;
                 van = false;
-                while (j < airport_name_list.Count && !van)
+                while (j < carrier_name_list.Count && !van)
                 {
-                    if (repulok[i].airport_name == airport_name_list[j])
+                    if (repulok[i].carrier_name == carrier_name_list[j])
                     {
                         van = true;
                     }
@@ -114,20 +117,25 @@ namespace repulo
                 }
                 if (!van)
                 {
-                    airport_name_list.Add(repulok[i].airport_name);
+                    carrier_name_list.Add(repulok[i].carrier_name);
                 }
             }
 
-            airport_name_list.Sort();
+            carrier_name_list.Sort();
 
-            StreamWriter sw = new StreamWriter("airport_name.txt");
-            for (int i = 0; i < airport_name_list.Count; i++)
+            StreamWriter sw = new StreamWriter("carrier_name.txt");
+            for (int i = 0; i < carrier_name_list.Count; i++)
             {
-                Console.WriteLine(i + airport_name_list[i].Substring(1, airport_name_list[i].Length - 1));
-                sw.WriteLine(airport_name_list[i].Substring(1, airport_name_list[i].Length - 1));
+                sw.WriteLine(carrier_name_list[i]);
             }
             sw.Close();
         }
+        //Az egyes légitársaságok összes járatának összeszámolása
+        //Az egyes légitársaságok által meglátogatott repterek összeszámolása
+        //Az egyes légitársaságok késéseinek átlagos idejének kiszámítása
+        //A 3 legforgalmasabb reptér kikeresése
+        //A 3 legkisebb átlagos késésű társaság kiszámítása
+
 
         static void Main(string[] args)
         {

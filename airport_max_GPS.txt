@@ -1,0 +1,4 @@
+﻿A 3 legforgalmasabb reptér GPS koordinátái:
+Atlanta,  GA: Hartsfield-Jackson Atlanta International;33.640411;-84.419853
+Chicago,  IL: Chicago O'Hare International;41.978611; -87.904724
+Dallas/Fort Worth,  TX: Dallas/Fort Worth International;32.897480;-97.040443

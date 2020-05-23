@@ -1,0 +1,18 @@
+body{
+   background-color: azure; 
+}
+
+.kozep{
+    margin: auto;
+}
+
+.fejlec{
+    border-bottom: medium darkgreen solid;
+    height: 50px;
+}
+.tartalom{
+    width: 800px;
+}
+
+#vers{
+}

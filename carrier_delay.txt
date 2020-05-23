@@ -1,0 +1,19 @@
+Az egyes légitársaságok késéseinek átlagos ideje percben:
+Alaska Airlines Inc.; 51,41
+Allegiant Air; 70,65
+American Airlines Inc.; 67,77
+Delta Air Lines Inc.; 67,70
+Endeavor Air Inc.; 79,43
+Envoy Air; 65,06
+ExpressJet Airlines Inc.; 79,99
+ExpressJet Airlines LLC; 86,09
+Frontier Airlines Inc.; 68,07
+Hawaiian Airlines Inc.; 40,13
+JetBlue Airways; 79,32
+Mesa Airlines Inc.; 81,35
+PSA Airlines Inc.; 70,30
+Republic Airline; 69,02
+SkyWest Airlines Inc.; 84,21
+Southwest Airlines Co.; 51,89
+Spirit Air Lines; 69,20
+United Air Lines Inc.; 74,63

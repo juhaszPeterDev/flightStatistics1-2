@@ -23,10 +23,13 @@
         <li class="breadcrumb-item active" aria-current="page">Repterek</li>
       </ol>
     </nav>
-    
-        <ul>
-            <li>Légitársaság 1</li>
-        </ul>
+    <ul>
+        <?php
+   $file = fopen("legitarsasagok.txt");
+foreach($file as $line_num => $sor){
+echo "<li>". $sor."</li>\n";
+}    
+?></ul>
     </div>
 </body>
 </html>

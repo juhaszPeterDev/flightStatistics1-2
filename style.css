@@ -16,3 +16,13 @@ body{
 
 #vers{
 }
+
+.lista{
+text-align:center;
+font-size: large;
+font-weight: bold;
+padding: 10px;
+}
+a.hover{
+text-decoration:none;
+}

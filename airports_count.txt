@@ -1,0 +1,19 @@
+Az egyes légitársaságok által meglátogatott repterek száma:
+Alaska Airlines Inc.;939
+Allegiant Air;1552
+American Airlines Inc.;1376
+Delta Air Lines Inc.;1878
+Endeavor Air Inc.;1299
+Envoy Air;1876
+ExpressJet Airlines Inc.;209
+ExpressJet Airlines LLC;1042
+Frontier Airlines Inc.;1274
+Hawaiian Airlines Inc.;245
+JetBlue Airways;844
+Mesa Airlines Inc.;1464
+PSA Airlines Inc.;1191
+Republic Airline;1221
+SkyWest Airlines Inc.;3230
+Southwest Airlines Co.;1141
+Spirit Air Lines;637
+United Air Lines Inc.;1361
